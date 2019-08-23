@@ -119,7 +119,7 @@ public class gameController {
    }
 
    public int runfight(){
-     return ThreadLocalRandom.current().nextInt(0, 1);
+     return (ThreadLocalRandom.current().nextInt(1, 100) % 2);
    }
 
    public int combatInput(){
