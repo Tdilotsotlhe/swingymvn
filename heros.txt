@@ -1,0 +1,1 @@
+{"c":{"x":5,"y":16},"Type":"Cowboy","Name":"asdasd","Level":2,"XP":"5417","Atk":"30","Def":"20","HP":"100","heroType":["Cowboy","Ninja","Chuck Norris","Jacob Zuma"]}
