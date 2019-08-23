@@ -8,6 +8,7 @@ import Model.Grid;
 import View.gameView;
 import View.heroView;
 
+import java.io.EOFException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -117,8 +118,8 @@ public class gameController {
 
    }
 
-   public boolean runfight(){
-     return ThreadLocalRandom.current().nextBoolean();
+   public int runfight(){
+     return ThreadLocalRandom.current().nextInt(0, 1);
    }
 
    public int combatInput(){
@@ -129,6 +130,7 @@ public class gameController {
 
        while (!scanner.hasNextInt())
        {
+
            scanner.nextLine(); //clear the invalid input before prompting again
            System.out.println("Please enter a valid option ");
        }

@@ -7,7 +7,7 @@ import Model.hero;
 import View.gameView;
 import View.heroView;
 import View.mainView;
-import org.hibernate.annotations.Target;
+
 import org.hibernate.validator.constraints.Length;
 
 
@@ -172,7 +172,7 @@ public class Main {
                 if((vilPos = newGrid.checkVillPos(newHero.getC())) > -1)
                     {
                         gv.fightorrun();
-                        if (gc.combatInput() == 2 && gc.runfight() == true){
+                        if (gc.combatInput() == 2 && gc.runfight() == 1){
                             gv.ran();
                             //reset cooordinates to orignal
                             newHero.setC(oldCoords.getX(), oldCoords.getY());
