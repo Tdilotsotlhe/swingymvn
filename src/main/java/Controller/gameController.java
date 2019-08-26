@@ -34,11 +34,11 @@ public class gameController {
         int villdef =Integer.parseInt(v.getDef());
         int villhp = Integer.parseInt(v.getHP());
 
-        while(villhp > 0 && herohp > 0){
+        while(villhp >= 0 && herohp >= 0){
             //get HP,atk,def
             villhp -= (heroatk - villdef);
             int arp = ThreadLocalRandom.current().nextInt(3);
-            if(villhp <= 0){
+            if(villhp <= 0 && herohp > 0){
                 System.out.println("Villain is dead");
 
 
@@ -101,12 +101,26 @@ public class gameController {
        int randomizer = ThreadLocalRandom.current().nextInt(Integer.parseInt(vw.getAtk()) + 600, Integer.parseInt(vw.getAtk()) + 800)+ Integer.parseInt(hw.getXP());
        hw.setXP(Integer.toString(randomizer + Integer.parseInt(hw.getXP())));
        //call a view to announce new XP
+
+       //move this
        System.out.println("You new XP:" + hw.getXP()+ "XP");
        //check level
        if(Integer.parseInt(hw.getXP()) >= ((hw.getLevel() + 1) * 1000 + (Math.pow(hw.getLevel(), 2) *450))){
+
+          //move this
            System.out.println("YOU HAVE LEVELED UP");
            //set level
            hw.setLevel(hw.getLevel() + 1);
+           //inc atk,def,hp
+//
+           String ATK = Integer.toString(Integer.parseInt(hw.getAtk()) + 5);
+           String DEF = Integer.toString(Integer.parseInt(hw.getDef()) + 5);
+           String HP = Integer.toString(Integer.parseInt(hw.getHP()) + 5);
+           //inc attack
+           hw.setAtk(ATK);
+           hw.setDef(DEF);
+           hw.setHP(HP);
+
            //reset grid
            Grid newGrid = Grid.getInstance();
            newGrid.genMap(hw.getLevel());
@@ -124,14 +138,16 @@ public class gameController {
 
    public int combatInput(){
        Scanner scanner = new Scanner(System.in);
-       System.out.println("1) Fight");
-       System.out.println("2) Run");
+
+     //  System.out.println("1) Fight");
+     //  System.out.println("2) Run");
 
 
        while (!scanner.hasNextInt())
        {
 
            scanner.nextLine(); //clear the invalid input before prompting again
+         //move this
            System.out.println("Please enter a valid option ");
        }
 

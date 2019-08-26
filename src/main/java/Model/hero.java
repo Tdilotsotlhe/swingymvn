@@ -41,7 +41,7 @@ public class hero extends Character {
 
         switch (java.lang.Character.toLowerCase(direction)) {
             case 'w':
-                System.out.println("Pressed W");
+            //    System.out.println("Pressed W");
                 //double check the <= condition
                 if (this.getC().getY() < newLevel && this.getC().getY() >= 0) {
                     this.c.setY(this.getC().getY() + 1);
@@ -57,7 +57,7 @@ public class hero extends Character {
                 }
                 break;
             case 'a':
-                System.out.println("Pressed a");
+              //  System.out.println("Pressed a");
                 if (this.getC().getX() < newLevel && this.getC().getX() > 0 ) {
                     this.c.setX(this.getC().getX() - 1);
                 } else {
@@ -72,7 +72,7 @@ public class hero extends Character {
 
                 break;
             case 's':
-                System.out.println("Pressed s");
+              //  System.out.println("Pressed s");
                 if (this.getC().getY() < newLevel && this.getC().getY() > 0) {
                     this.c.setY(this.getC().getY() - 1);
                 } else {
@@ -87,14 +87,16 @@ public class hero extends Character {
 
                 break;
             case 'd':
-                System.out.println("Pressed d");
+            //    System.out.println("Pressed d");
                 if (this.getC().getX() < newLevel && this.getC().getY() >= 0) {
                     this.c.setX(this.getC().getX() + 1);
                 } else {
                     gainXPWall();
                     gv.wallEndsGame();
                     //save game
+
                     String heroSave = this.getName() + "," + this.getAtk() + "," + this.getDef() + "," + this.getHP() + "," + this.getXP() + "," + this.getLevel();
+                  //move this
                     System.out.println("SAVING GAME........");
                     MyFileWriter.saveHero(heroSave, this);
                     System.exit(0);
@@ -113,6 +115,7 @@ public class hero extends Character {
     public void gainXPWall() {
         this.setXP(Integer.toString(Integer.parseInt(this.getXP()) + 500));
         if(Integer.parseInt(this.getXP()) > ((this.getLevel()) * 1000 + 1 << (this.getLevel() + 1)) * 450){
+            //move this
             System.out.println("YOU HAVE LEVELED UP");
             //set level
             this.setLevel(this.getLevel() + 1);

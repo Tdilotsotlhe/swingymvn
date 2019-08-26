@@ -39,7 +39,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Player newPlayer = new Player();
-        System.out.println("tsek");
+
         MainMenu();
 //        String[] userHeroDetails =mv createHero();
 //        hero newHero = new hero(userHeroDetails[1],userHeroDetails[2],userHeroDetails[3],userHeroDetails[4],userHeroDetails[5]);
@@ -50,28 +50,28 @@ public class Main {
 //        controller.updateView();
     }
 
-    public static String[] createHero(){
-        //gather info, move this fuynction
-        String[] newHero = new String[6];
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(" Enter Hero Name:");
-        try {
-            newHero[0] = scanner.next();
-            // do stuff
-        } catch (InputMismatchException e){
-             System.out.println("enter proper name nigger");
-        }
-
-        int selection = Integer.parseInt(scanner.next());
-
-        newHero[1] = "Jesus";
-        newHero[2] = "Holy Mabn";
-        newHero[3] = "0";
-        newHero[4] = "5";
-        newHero[5] = "5";
-
-        return newHero;
-    }
+//    public static String[] createHero(){
+//        //gather info, move this fuynction
+//        String[] newHero = new String[6];
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println(" Enter Hero Name:");
+//        try {
+//            newHero[0] = scanner.next();
+//            // do stuff
+//        } catch (InputMismatchException e){
+//             System.out.println("enter proper name nigger");
+//        }
+//
+//        int selection = Integer.parseInt(scanner.next());
+//
+//        newHero[1] = "Jesus";
+//        newHero[2] = "Holy Mabn";
+//        newHero[3] = "0";
+//        newHero[4] = "5";
+//        newHero[5] = "5";
+//
+//        return newHero;
+//    }
 
     public static void MainMenu() throws IOException {
 
