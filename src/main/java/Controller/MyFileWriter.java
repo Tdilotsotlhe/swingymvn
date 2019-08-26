@@ -7,7 +7,7 @@ import com.google.gson.GsonBuilder;
 import Model.hero;
 import java.util.ArrayList;
 import java.io.*;
-
+//check file for  existing hero
 import java.io.*;
 public class MyFileWriter {
     public static void saveHero(String str, hero h)
@@ -21,7 +21,7 @@ public class MyFileWriter {
           //  builder.setPrettyPrinting().serializeNulls();
 
             String saveclass = gson.toJson(h);
-            BufferedWriter out = new BufferedWriter(new FileWriter("heros.txt", true));
+            BufferedWriter out = new BufferedWriter(new FileWriter("heros.txt", false));
             out.write(saveclass + "\n");
             out.close();
         }
@@ -42,6 +42,10 @@ public class MyFileWriter {
 
         hero testh = null;
             while ((st = br.readLine()) != null) {
+                if (st.length() < 1){
+                    System.out.println("no hero saved");
+                    System.exit(0);
+                }
                 testh = gson.fromJson(st, hero.class);
                 heroView hv = new heroView();
                 hv.printHeroStats(testh);

@@ -100,7 +100,7 @@ public class Main {
                     String newName = scanner.next();
                     //validate XP/LEVEL1
                     newHero = new hero(newName,"1","10","10","100");
-                    System.out.println(selection);
+                  //  System.out.println(selection);
                     looper = 0;
                     startGame = 1;
                     break;
@@ -172,14 +172,25 @@ public class Main {
                 if((vilPos = newGrid.checkVillPos(newHero.getC())) > -1)
                     {
                         gv.fightorrun();
-                        if (gc.combatInput() == 2 && gc.runfight() == 1){
-                            gv.ran();
-                            //reset cooordinates to orignal
-                            newHero.setC(oldCoords.getX(), oldCoords.getY());
-                            //reset cooordinates to orignal
-                        }else {
-                            gc.fight_sim(newHero, newGrid.getVillainStack().get(vilPos));
-                            hv.printHeroDetails(newHero);
+
+                        while(true) {
+
+                            int rand = gc.runfight();
+                            int combin = gc.combatInput();
+                            if (combin == 2 && rand == 1) {
+                                gv.ran();
+                                //reset cooordinates to orignal
+                                newHero.setC(oldCoords.getX(), oldCoords.getY());
+                                break;
+                                //reset cooordinates to orignal
+                            } else if (combin == 1 || (combin == 2 && rand  == 0)) {
+                                gc.fight_sim(newHero, newGrid.getVillainStack().get(vilPos));
+                                hv.printHeroDetails(newHero);
+                                break;
+                            }else{
+
+                                gv.invalidMove();
+                            }
                         }
                     }
 

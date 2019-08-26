@@ -1,1 +1,1 @@
-{"c":{"x":5,"y":16},"Type":"Cowboy","Name":"asdasd","Level":2,"XP":"5417","Atk":"30","Def":"20","HP":"100","heroType":["Cowboy","Ninja","Chuck Norris","Jacob Zuma"]}
+{"c":{"x":13,"y":0},"Type":"Cowboy","Name":"Rahul","Level":4,"XP":"23843","Atk":"30","Def":"10","HP":"100","heroType":["Cowboy","Ninja","Chuck Norris","Jacob Zuma"]}

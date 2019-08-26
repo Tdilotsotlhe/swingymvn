@@ -85,14 +85,14 @@ public class gameView {
 
     }
 
+
+
     public void villLoc() {
         System.out.println("the villains are located here:");
     }
 
 
-
-
-
-
-
+    public void invalidMove() {
+        System.out.println("invalid");
+    }
 }
